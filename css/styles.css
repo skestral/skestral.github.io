@@ -1,0 +1,155 @@
+/* styles.css | CST-336 | Personal Portfolio – Savannah Kestral */
+
+
+/* Body */
+body {
+    background-color: #21446e;
+    color: #dce8f5;
+    font-family: 'Open Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Centering */
+header, nav, main, footer, #content {
+    text-align: center;
+}
+
+
+/* Header */
+header h1 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 2.8em;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+header hr {
+    border: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.35);
+    margin: 8px auto;
+    width: 80%;
+}
+
+
+/* Navigation */
+nav {
+    background-color: #19355a;
+    padding: 12px 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 0 15px;
+    padding: 6px 14px;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+nav a.active-link {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+
+/* Main */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 20px;
+    gap: 40px;
+}
+
+main figure {
+    margin: 0;
+}
+
+main figure img {
+    border-radius: 8px;
+    width: 200px;
+}
+
+main div {
+    max-width: 500px;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.85em;
+    color: #a0b8d4;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+footer img {
+    display: block;
+    margin: 0 auto 8px auto;
+}
+
+
+/* Table */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px 20px;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: #ffffff;
+}
+
+#table-header {
+    background-color: #19355a;
+    color: #ffffff;
+}
+
+.table-row {
+    background-color: #1c3c65;
+}
+
+.table-row:hover {
+    background-color: #2a5080;
+}
+
+
+/* Interests List */
+#content ul {
+    margin: 0 auto;
+    width: 360px;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 2;
+}
+
+.hobby {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+/* Contact */
+main.contact {
+    flex-direction: column;
+    align-items: center;
+}
+
+main h2 {
+    width: 100%;
+    margin-bottom: 16px;
+}
