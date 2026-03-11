@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Lifecycle Management – HW1 | Savannah Kestral</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Savannah Kestral</h1>
+        <hr>
+    </header>
+
+    <nav>
+        <a href="../index.html">Portfolio</a>
+        <a href="power-platform.html">Power Platform</a>
+        <a href="alm.html" class="active-link">ALM</a>
+        <a href="azure-devops.html">Azure DevOps</a>
+        <a href="governance.html">Governance</a>
+    </nav>
+
+    <article class="hw1-article">
+
+        <div class="hw1-banner">
+            <h2>Application Lifecycle Management</h2>
+            <p>
+                <abbr title="Application Lifecycle Management">ALM</abbr> is the discipline of managing a
+                software application from initial concept through retirement, integrating governance,
+                development, testing, and operations into one repeatable process.
+            </p>
+        </div>
+
+        <section>
+            <p>
+                <abbr title="Application Lifecycle Management">ALM</abbr> bridges the gap between business
+                stakeholders and engineering teams by providing shared processes and tooling across every
+                stage of delivery. In the Microsoft ecosystem it is typically practiced with
+                <abbr title="Azure DevOps">ADO</abbr> or GitHub, both of which cover the full
+                <mark>Dev → Test → UAT → Production</mark> promotion chain.
+            </p>
+            <ul>
+                <li><strong>Governance</strong> — establishes branching strategies, release gates, security baselines, and naming conventions</li>
+                <li><strong>Planning</strong> — backlog creation, sprint planning, and work estimation using Azure Boards or GitHub Projects</li>
+                <li><strong>Development</strong> — coding, peer review via pull requests, and tracking changes in source control</li>
+                <li><strong>Testing</strong> — automated unit, integration, and <abbr title="User Acceptance Testing">UAT</abbr> tests enforced as pipeline quality gates</li>
+                <li><strong>Deployment</strong> — promoting artifacts through environments via <abbr title="Continuous Integration / Continuous Delivery">CI/CD</abbr> pipelines with required approvals</li>
+                <li><strong>Operations</strong> — monitoring health and performance in production and feeding observations back into the backlog</li>
+                <li><strong>Retirement</strong> — decommissioning an application including data archival, user communication, and resource cleanup</li>
+            </ul>
+        </section>
+
+    </article>
+
+    <footer>
+        <img src="../img/csumb-logo.png" alt="CSUMB Logo" width="120">
+        <p>&copy; 2026 Savannah Kestral. CST-336 HW1.</p>
+    </footer>
+
+</body>
+</html>
