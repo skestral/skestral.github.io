@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <a href="/hw1/index.html" data-nav-key="assignments">Assignments</a>
         <div class="nav-dropdown-menu">
             <a href="/hw1/index.html" data-nav-key="hw1">HW 1</a>
+            <a href="/hw2/index.html" data-nav-key="hw2">HW 2 Geography Quiz</a>
             <a href="/lab2_guessing_game/index.html" data-nav-key="lab2">Lab 2 Guessing Game</a>
         </div>
     </div>
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             activeLink.classList.add("active-link");
         }
 
-        if (currentPage === "hw1" || currentPage === "lab2") {
+        if (currentPage === "hw1" || currentPage === "hw2" || currentPage === "lab2") {
             const assignmentsLink = mount.querySelector('[data-nav-key="assignments"]');
             if (assignmentsLink) {
                 assignmentsLink.classList.add("active-link");
@@ -90,7 +91,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         const pathname = window.location.pathname;
-        const markers = ["/hw1/", "/lab2_guessing_game/"];
+        const markers = ["/hw1/", "/hw2/", "/lab2_guessing_game/"];
         let rootPath = pathname.slice(0, pathname.lastIndexOf("/"));
 
         for (const marker of markers) {
@@ -108,6 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             contact: "contact.html",
             assignments: "hw1/index.html",
             hw1: "hw1/index.html",
+            hw2: "hw2/index.html",
             lab2: "lab2_guessing_game/index.html",
             "hw1-index": "hw1/index.html",
             "hw1-power-platform": "hw1/power-platform.html",
