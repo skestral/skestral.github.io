@@ -83,3 +83,35 @@
     white-space: nowrap;
     font-size: 1rem;
 }
+
+.hw1-sub-nav {
+    background-color: #132b49;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hw1-sub-nav a {
+    display: inline-block;
+    color: #cfe2f6;
+    text-decoration: none;
+    font-size: 0.98rem;
+    margin: 0 8px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.hw1-sub-nav a:hover,
+.hw1-sub-nav a:focus-visible {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    outline: none;
+}
+
+.hw1-sub-nav a.active-link {
+    background-color: rgba(106, 180, 245, 0.28);
+    color: #ffffff;
+    font-weight: 700;
+}
