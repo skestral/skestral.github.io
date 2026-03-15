@@ -5,23 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Lifecycle Management – HW1 | Savannah Kestral</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/site-header.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Savannah Kestral</h1>
-        <hr>
-    </header>
-
-    <nav>
-        <a href="../index.html">Portfolio</a>
-        <a href="index.html">HW 1</a>
-        <a href="power-platform.html">Power Platform</a>
-        <a href="alm.html" class="active-link">ALM</a>
-        <a href="azure-devops.html">Azure DevOps</a>
-        <a href="governance.html">Governance</a>
-    </nav>
+    <div id="shared-site-nav" data-current-page="hw1" data-nav-src="../partials/site-header-nav.html"></div>
 
     <article class="hw1-article">
 
@@ -65,6 +54,8 @@
         <img src="../img/csumb-logo.png" alt="CSUMB Logo" width="120">
         <p>&copy; 2026 Savannah Kestral. CST-336 HW1.</p>
     </footer>
+
+    <script src="../js/load-shared-nav.js"></script>
 
 </body>
 </html>

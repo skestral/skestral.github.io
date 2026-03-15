@@ -1,0 +1,18 @@
+/* boiler plat css */
+
+.assignment-main {
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.assignment-card {
+    background: #ffffff;
+    border: 1px solid #d9e0ea;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.assignment-card h2 {
+    margin-top: 0;
+}

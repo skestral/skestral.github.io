@@ -4,29 +4,12 @@
     <meta charset="UTF-8">
     <title>Savannah Kestral - About Me</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site-header.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Savannah Kestral</h1>
-        <hr>
-    </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active-link">About</a>
-        <a href="contact.html">Contact</a>
-        <div class="nav-dropdown">
-            <a href="hw1/index.html">HW 1</a>
-            <div class="nav-dropdown-menu">
-                <a href="hw1/power-platform.html">Power Platform</a>
-                <a href="hw1/alm.html">ALM</a>
-                <a href="hw1/azure-devops.html">Azure DevOps</a>
-                <a href="hw1/governance.html">Governance</a>
-            </div>
-        </div>
-    </nav>
+    <div id="shared-site-nav" data-current-page="about" data-nav-src="partials/site-header-nav.html"></div>
 
     <br>
 
@@ -79,6 +62,8 @@
         <img src="img/csumb-logo.png" alt="CSUMB Logo" width="120">
         <p>&copy; 2026 Savannah Kestral.</p>
     </footer>
+
+    <script src="js/load-shared-nav.js"></script>
 
 </body>
 </html>

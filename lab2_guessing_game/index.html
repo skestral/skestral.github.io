@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guess a Number</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/site-header.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="shared-site-nav" data-current-page="lab2" data-nav-src="../partials/site-header-nav.html"></div>
+
+    <div class="container">
+        <header>
+            <h1>Guess the Number!</h1>
+            <h2>Guess a number between 1 and 99 in seven attempts!</h2>
+        </header>
+        
+        <main id="main">
+            <div class="game-stats">
+                <div class="score-board">
+                    <p>Wins: <span id="winsCount">0</span></p>
+                    <p>Losses: <span id="lossesCount">0</span></p>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <label for="playerGuess">Enter a guess:</label>
+                <input type="number" id="playerGuess" min="1" max="99" placeholder="#">         
+                <button id="guessBtn">Guess</button> 
+                <button id="resetBtn" style="display:none;">Reset</button> 
+            </div>
+
+            <div class="message-feed">
+                <p id="feedback" style="font-weight:bold; font-size: 1.2rem;">Enter a number between 1 and 99 to start.</p>
+            </div>
+
+            <div class="history-container">
+                <h3>Previous Guesses</h3>
+                <div id="guesses" style="font-size: 1.2rem; min-height: 24px; color: #34495e; font-weight: bold;"></div>
+            </div>
+        </main>
+    </div>
+    <script src="../js/load-shared-nav.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

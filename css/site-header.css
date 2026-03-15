@@ -1,0 +1,85 @@
+.site-header,
+.site-nav {
+    text-align: center;
+}
+
+.site-header {
+    background-color: #21446e;
+    padding: 14px 0 6px;
+}
+
+.site-header h1 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 2.8em;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+.site-header hr {
+    border: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.35);
+    margin: 8px auto;
+    width: 80%;
+}
+
+.site-nav {
+    background-color: #19355a;
+    padding: 12px 0;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+}
+
+.site-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 0 15px;
+    padding: 6px 14px;
+    border-radius: 4px;
+}
+
+.site-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.site-nav a.active-link {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+}
+
+.site-nav .nav-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.site-nav .nav-dropdown > a::after {
+    content: ' \25BE';
+    font-size: 0.75em;
+}
+
+.site-nav .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #19355a;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    z-index: 200;
+    min-width: 190px;
+    padding: 6px 0;
+}
+
+.site-nav .nav-dropdown:hover .nav-dropdown-menu {
+    display: block;
+}
+
+.site-nav .nav-dropdown-menu a {
+    display: block;
+    margin: 0;
+    padding: 9px 18px;
+    border-radius: 0;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 1rem;
+}
