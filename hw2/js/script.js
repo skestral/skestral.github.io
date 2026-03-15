@@ -14,6 +14,7 @@
     const q4Choices = ["Maine", "Rhode Island", "Maryland", "Delaware"];
 
     displayQ4Choices(shuffleArray(q4Choices.slice()));
+    randomizeOptionQuestions();
     updateAttemptsUI();
 
     if (submitButton) {
@@ -45,6 +46,37 @@
             label.setAttribute("for", id);
             label.innerHTML = `<input type="radio" name="q4" id="${id}" value="${choice}"> ${choice}`;
             choicesContainer.appendChild(label);
+        });
+    }
+
+    function randomizeOptionQuestions() {
+        ["q2", "q9"].forEach((selectId) => {
+            const select = document.getElementById(selectId);
+            if (!select) {
+                return;
+            }
+
+            const options = Array.from(select.options);
+            const firstOption = options.shift();
+            const shuffledOptions = shuffleArray(options.slice());
+
+            select.innerHTML = "";
+            if (firstOption) {
+                select.appendChild(firstOption);
+            }
+            shuffledOptions.forEach((option) => select.appendChild(option));
+        });
+
+        ["q3Choices", "q4Choices", "q7Choices", "q8Choices"].forEach((containerId) => {
+            const container = document.getElementById(containerId);
+            if (!container) {
+                return;
+            }
+
+            const labels = Array.from(container.querySelectorAll("label"));
+            const shuffledLabels = shuffleArray(labels.slice());
+            container.innerHTML = "";
+            shuffledLabels.forEach((label) => container.appendChild(label));
         });
     }
 
@@ -267,5 +299,6 @@
         }
 
         displayQ4Choices(shuffleArray(q4Choices.slice()));
+        randomizeOptionQuestions();
     }
 })();
