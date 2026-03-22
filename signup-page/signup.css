@@ -1,0 +1,181 @@
+body {
+  background-color: #21446e;
+  font-family: 'Open Sans', Arial, sans-serif;
+  min-height: 100vh;
+  padding: 30px 0 50px;
+}
+
+h1 {
+  text-align: center;
+  color: #dce8f5;
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.35);
+}
+
+.card-header {
+  background-color: #19355a;
+  color: #6ab4f5;
+  border-radius: 16px 16px 0 0 !important;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 16px 24px;
+  border-bottom: 2px solid #6ab4f5;
+}
+
+.card-body {
+  padding: 28px 36px;
+  background-color: #f5f9ff;
+  border-radius: 0 0 16px 16px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #19355a;
+  margin-bottom: 4px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #6ab4f5;
+  box-shadow: 0 0 0 0.2rem rgba(106, 180, 245, 0.3);
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #b8cfe8;
+  font-size: 0.95em;
+  background-color: #ffffff;
+}
+
+.btn-signup {
+  background-color: #21446e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 36px;
+  font-size: 1.05em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-signup:hover {
+  background-color: #21446e;
+  color: white;
+}
+
+.info-box {
+  background-color: #dce8f5;
+  border-left: 4px solid #6ab4f5;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9em;
+  color: #19355a;
+  margin-top: 4px;
+}
+
+.error {
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+.success {
+  color: #1b5e20;
+  font-weight: 500;
+}
+
+#formErrors {
+  display: none;
+  background-color: #fdecea;
+  border-left: 4px solid #d32f2f;
+  border-radius: 6px;
+  padding: 10px 16px;
+  margin-top: 16px;
+  font-size: 0.95em;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #c9dff2;
+  margin: 20px 0;
+}
+
+.location-result {
+  display: inline-block;
+  background-color: #dce8f5;
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-weight: 600;
+  color: #132b49;
+  min-width: 60px;
+}
+
+.radio-group label {
+  font-weight: normal;
+  margin-right: 16px;
+  cursor: pointer;
+  color: #19355a;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 4px;
+  accent-color: #21446e;
+}
+
+.suggested-pwd {
+  color: #19355a;
+  font-size: 0.88em;
+  font-style: italic;
+}
+
+.form-row-gap {
+  margin-bottom: 16px;
+}
+
+.gender-option {
+  margin-right: 16px;
+}
+
+/* Welcome page */
+.welcome-page {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.welcome-card {
+  display: inline-block;
+  background-color: #f5f9ff;
+  border-radius: 16px;
+  padding: 50px 70px;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.35);
+}
+
+.welcome-card h1 {
+  color: #21446e;
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 700;
+}
+
+.welcome-card p {
+  color: #19355a;
+}
+
+.welcome-card a {
+  color: #21446e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.welcome-card a:hover {
+  color: #6ab4f5;
+  text-decoration: underline;
+}

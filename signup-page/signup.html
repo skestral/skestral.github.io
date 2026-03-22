@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 3 Sign Up - Savannah Kestral</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site-header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+  <div id="shared-site-nav" data-current-page="signup" data-nav-src="../partials/site-header-nav.html"></div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9 col-sm-12">
+
+        <h1>Sign Up</h1>
+
+        <div class="card">
+          <div class="card-header">Create an Account</div>
+          <div class="card-body">
+
+            <form id="signupForm" action="welcome.html">
+
+              <div class="row form-row-gap">
+                <div class="col-md-6">
+                  <label class="form-label" for="fName">First Name</label>
+                  <input type="text" class="form-control" id="fName" name="fName" placeholder="First name">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="lName">Last Name</label>
+                  <input type="text" class="form-control" id="lName" name="lName" placeholder="Last name">
+                </div>
+              </div>
+
+              <div class="form-row-gap">
+                <label class="form-label">Gender</label>
+                <div class="radio-group">
+                  <label><input type="radio" name="gender" value="m"> Male</label>
+                  <label><input type="radio" name="gender" value="f"> Female</label>
+                </div>
+              </div>
+
+              <hr class="section-divider">
+
+              <div class="form-row-gap">
+                <label class="form-label" for="zip">Zip Code</label>
+                <input type="text" class="form-control w-50" id="zip" name="zip" maxlength="5" placeholder="e.g. 93955">
+              </div>
+
+              <div class="row form-row-gap">
+                <div class="col-sm-4">
+                  <label class="form-label">City</label>
+                  <div>
+                    <span class="location-result" id="city">-</span>
+                    <span id="cityError" class="error"></span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <label class="form-label">Latitude</label>
+                  <div><span class="location-result" id="lat">-</span></div>
+                </div>
+                <div class="col-sm-4">
+                  <label class="form-label">Longitude</label>
+                  <div><span class="location-result" id="long">-</span></div>
+                </div>
+              </div>
+
+              <hr class="section-divider">
+
+              <div class="row form-row-gap">
+                <div class="col-md-6">
+                  <label class="form-label" for="state">State</label>
+                  <select class="form-select" id="state" name="state">
+                    <option value="0">- select a state -</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="county">County</label>
+                  <select class="form-select" id="county" name="county">
+                    <option>Select County</option>
+                  </select>
+                </div>
+              </div>
+
+              <hr class="section-divider">
+
+              <div class="form-row-gap">
+                <label class="form-label" for="username">Desired Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username">
+                <span id="usernameMsg"></span>
+              </div>
+
+              <div class="form-row-gap">
+                <label class="form-label" for="pwd">Password</label>
+                <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter a password">
+                <div id="sPwd" class="suggested-pwd mt-1"></div>
+              </div>
+
+              <div class="form-row-gap">
+                <label class="form-label" for="pwd2">Retype Password</label>
+                <input type="password" class="form-control" id="pwd2" name="pwd2" placeholder="Retype your password">
+              </div>
+
+              <div class="text-center mt-4">
+                <button type="submit" class="btn btn-signup" id="submitBtn">Sign Up!</button>
+              </div>
+
+              <div id="formErrors" class="error"></div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // event listener
+    $("#zip").on("change", displayCity);
+    $("#pwd").on("click", displayPwd);
+    $("#username").on("input", checkUsername);
+    $("#state").on("change", displayCounties);
+    $("#signupForm").on("submit", validateForm);
+
+    getStates();
+
+    async function displayCity() {
+      $("#city").html("-");
+      $("#cityError").html("");
+      $("#lat").html("-");
+      $("#long").html("-");
+
+      let zipCode = $("#zip").val();
+      let url = `https://csumb.space/api/cityInfoAPI.php?zip=${zipCode}`;
+      let data = await fetchData(url);
+
+      if (data == false) {
+        $("#city").html("-");
+        $("#cityError").html(" Zip code not found");
+      } else {
+        $("#city").html(data.city);
+        $("#lat").html(data.latitude);
+        $("#long").html(data.longitude);
+      }
+    }
+
+    async function getStates() {
+      let url = `https://csumb.space/api/allStatesAPI.php`;
+      let data = await fetchData(url);
+
+      $("#state").html('<option value="0">- select a state -</option>');
+      for (let state of data) {
+        let optionEl = document.createElement("option");
+        optionEl.innerText = state.state;
+        optionEl.value = state.usps;
+        $("#state").append(optionEl);
+      }
+    }
+
+    async function displayCounties() {
+      let stateVal = $("#state").val();
+      if (stateVal === "0") {
+        $("#county").html("<option>Select County</option>");
+        return;
+      }
+      let url = `https://csumb.space/api/countyListAPI.php?state=${stateVal}`;
+      let data = await fetchData(url);
+
+      $("#county").html("<option>Select County</option>");
+      for (let item of data) {
+        $("#county").append(`<option>${item.county}</option>`);
+      }
+    }
+
+    async function checkUsername() {
+      let un = $("#username").val();
+      if (un.length === 0) {
+        $("#usernameMsg").html("");
+        return;
+      }
+      let url = `https://csumb.space/api/usernamesAPI.php?username=${un}`;
+      let data = await fetchData(url);
+
+      if (data.available) {
+        $("#usernameMsg").html(" ✓ Username available")
+          .removeClass("error")
+          .addClass("success");
+      } else {
+        $("#usernameMsg").html(" ✗ Username NOT available")
+          .removeClass("success")
+          .addClass("error");
+      }
+    }
+
+    async function displayPwd() {
+      let url = `https://csumb.space/api/suggestedPassword.php?length=8`;
+      let data = await fetchData(url);
+      $("#sPwd").html(`💡 Suggested password: <strong>${data.password}</strong>`);
+    }
+
+    function validateForm(e) {
+      $("#formErrors").hide().html("");
+      let errors = [];
+
+      let username = $("#username").val().trim();
+      let password = $("#pwd").val();
+      let password2 = $("#pwd2").val();
+
+      if (username.length === 0) {
+        errors.push("Username cannot be blank.");
+      }
+
+      if (password.length < 6) {
+        errors.push("Password must be at least 6 characters.");
+      }
+
+      if (password !== password2) {
+        errors.push("Passwords do not match.");
+      }
+
+      if (errors.length > 0) {
+        e.preventDefault();
+        $("#formErrors").html(errors.join("<br>")).show();
+      }
+    }
+
+    async function fetchData(url) {
+      let response = await fetch(url);
+      let data = await response.json();
+      return data;
+    }
+  </script>
+
+  <script src="../js/load-shared-nav.js"></script>
+</body>
+</html>
