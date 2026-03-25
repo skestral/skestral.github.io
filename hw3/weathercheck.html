@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW3 – Weather Check | Savannah Kestral</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/site-header.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="shared-site-nav" data-current-page="hw3" data-nav-src="../partials/site-header-nav.html"></div>
+
+    <main class="weather-main">
+
+        <section class="assignment-desc">
+            <h2 class="section-heading">HW3 – Weather Check</h2>
+            <p>
+                 Weather Dashboard
+            </p>
+        </section>
+
+        <section class="search-section">
+            <form id="weatherForm" class="search-form" novalidate>
+                <div class="form-row">
+                    <input
+                        type="text"
+                        id="zipInput"
+                        class="search-input"
+                        placeholder="Enter US zip code (e.g. 93940)"
+                        aria-label="Zip code"
+                        maxlength="5"
+                    >
+                    <select id="unitSelect" class="unit-select" aria-label="Temperature unit">
+                        <option value="metric">°C – Celsius</option>
+                        <option value="imperial">°F – Fahrenheit</option>
+                    </select>
+                    <button type="submit" id="searchBtn" class="btn-search">Check Weather</button>
+                </div>
+                <p id="inputError" class="error-message" role="alert" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section id="weatherDisplay" class="weather-display" aria-live="polite"></section>
+
+        <section class="cat-section">
+            <h2 class="section-heading">Cat of the Moment</h2>
+            <div class="cat-card">
+                <img id="catImg" src="" alt="A random cat" class="cat-img">
+                <br>
+                <button id="newCatBtn" class="btn-search" style="margin-top: 16px;">Searching for a new moment?</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <img src="../img/csumb-logo.png" alt="CSUMB Logo" width="120">
+        <p>&copy; 2026 Savannah Kestral</p>
+    </footer>
+
+    <script src="../js/load-shared-nav.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+</html>
